@@ -118,5 +118,4 @@ public class DemoResource {
         String json = GSON.toJson(ManyQuotesDTO);
         return json;
     }
-
 }

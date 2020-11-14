@@ -109,7 +109,7 @@ public class DemoResource {
     }
     @GET
     @Path("joke")
-    @RolesAllowed("user")
+    //@RolesAllowed("user")
     @Produces(MediaType.APPLICATION_JSON)
     public String getJoke() throws IOException {
         String joke = HttpUtils.fetchData("https://official-joke-api.appspot.com/jokes/random");

@@ -2,6 +2,7 @@ package rest;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import dtos.ManyQuotesDTO;
 import dtos.BoredDTO;
 import dtos.FoodDTO;
 import dtos.CombinedDTO;
@@ -104,6 +105,17 @@ public class DemoResource {
         CombinedDTO combined = new CombinedDTO(boredDTO, breakingBadDTO, kanyeDTO, randomQuoteDTO, randomDogDTO);
         
         String json = GSON.toJson(combined);
+        return json;
+    }
+    @GET
+    @Path("manyquotes")
+    @RolesAllowed("user")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getManyQuotes() throws IOException {
+        String manyQuotes = HttpUtils.fetchData("https://type.fit/api/quotes");
+        ManyQuotesDTO ManyQuotesDTO = gson.fromJson(manyQuotes, ManyQuotesDTO.class);
+
+        String json = GSON.toJson(ManyQuotesDTO);
         return json;
     }
 

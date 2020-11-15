@@ -107,12 +107,13 @@ public class DemoResource {
         String json = GSON.toJson(combined);
         return json;
     }
+    
     @GET
     @Path("joke")
     //@RolesAllowed("user")
     @Produces(MediaType.APPLICATION_JSON)
     public String getJoke() throws IOException {
-        String joke = HttpUtils.fetchData("https://official-joke-api.appspot.com/jokes/random");
+        String joke = HttpUtils.fetchData("https://api.chucknorris.io/jokes/random");
         RandomJokeDTO RandomJokeDTO = gson.fromJson(joke, RandomJokeDTO.class);
 
         String json = GSON.toJson(RandomJokeDTO);

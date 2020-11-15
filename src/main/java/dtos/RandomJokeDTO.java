@@ -11,21 +11,20 @@ package dtos;
  */
 public class RandomJokeDTO {
 
-    private String joke;
+    private String value;
 
-    public RandomJokeDTO(String joke) {
-        this.joke = joke;
+    public RandomJokeDTO(String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public RandomJokeDTO() {
     }
-
-    public String getJoke() {
-        return joke;
-    }
-
-    public void setJoke(String joke) {
-        this.joke = joke;
-    }
-    
 }

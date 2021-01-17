@@ -2,6 +2,7 @@ package dtos;
 
 public class BoredDTO {
     
+    
     private String activity, type, price;
 
     public BoredDTO(String activity, String type, String price) {
